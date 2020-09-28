@@ -1,25 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { DestinoViaje } from '../models/destino-viaje.model';
 
-import { DestinoViajeComponent } from './destino-viaje.component';
+@Component({
+  selector: 'app-destino-viaje',
+  templateUrl: './destino-viaje.component.html',
+  styleUrls: ['./destino-viaje.component.css']
+})
+export class DestinoViajeComponent implements OnInit {
+  @Input() destino: DestinoViaje;
+  @HostBinding('attr.class') cssClass = 'col-md-4';
+  constructor() { }
 
-describe('DestinoViajeComponent', () => {
-  let component: DestinoViajeComponent;
-  let fixture: ComponentFixture<DestinoViajeComponent>;
+  ngOnInit(): void {
+  }
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DestinoViajeComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DestinoViajeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+}

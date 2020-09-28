@@ -1,17 +1,36 @@
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Destino</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">Escribe el destino</small>
+<ul>
+  <li>destino 1</li>
+  <li>destno 2</li>
+</ul>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <span class="anchor" id="formLogin"></span>
+
+      <!-- form	card	login	with	validation	feedback	-->
+      <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h3 class="mb-0">Whishlist</h3>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..." #nombre>
+            </div>
+            <div class="form-group">
+              <label for="Imagen Url">Imagen Url</label>
+              <input type="text" class="form-control" id="imagenUrl" placeholder="Ingresar url..." #url>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value, url.value)">Guardar!</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Imagen URL</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
+  <hr class="mb-5">
+  <div class="row row-flex">
+    <app-destino-viaje *ngFor="let d of destinos" [destino]="d"></app-destino-viaje>
   </div>
-
-  <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
-
-
-<app-destino-viaje *ngFor="let x of destinos" [nombre]="x"></app-destino-viaje>
-
+</div>
